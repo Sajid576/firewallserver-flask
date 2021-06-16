@@ -8,7 +8,7 @@ from Sql.sql_injection_classifier import  SqlInjection
 app = Flask(__name__)
 
 @app.route("/",methods=['GET'])
-def projectRoot():
+def  mainRoute():
   return "<h1>Welcome to the SQL/NoSQL Injection Detection Machine Learning Model API</h1>"
 
 @app.route("/sql_injection",methods=['POST'])
