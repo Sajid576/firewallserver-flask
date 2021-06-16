@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/",methods=['GET'])
 def projectRoot():
-  return "Root project"
+  return "<h1>Welcome to the SQL/NoSQL Injection Detection Machine Learning Model API</h1>"
 
 @app.route("/sql_injection",methods=['POST'])
 def detectSqlInjection():
