@@ -14,5 +14,8 @@ You have to run this command every time before starting the server.
 
 Then your local server should be available on  `localhost:8080`
 
+- Run the below command to deactivate the server:
+`$ deactivate`
+
 ###### Server URL
 `https://injection-model-flask.herokuapp.com`
