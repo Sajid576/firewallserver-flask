@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "957e0fa0-fdc4-4645-af09-cb23eb9cb7b5",
+		"name": "injection_detection_server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "detect sql injection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\":\"bla bla bla\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/sql_injection",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"sql_injection"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "detect sql injection",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\":\"bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/sql_injection",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sql_injection"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Jun 2021 12:55:55 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "SQL"
+				}
+			]
+		},
+		{
+			"name": "detect NoSql injection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/nosql_injection",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"nosql_injection"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "detect NoSql injection",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/nosql_injection",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"nosql_injection"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Jun 2021 12:54:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "NoSQL"
+				}
+			]
+		}
+	]
+}
