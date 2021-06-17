@@ -1,4 +1,4 @@
-## Flask installation Steps:
+##### Flask installation Steps:
 
 - https://www.twilio.com/docs/usage/tutorials/how-to-set-up-your-python-and-flask-development-environment
 
@@ -30,7 +30,7 @@ $ deactivate
 
 ## API URLs Documentation
 
-To test the API with URLs you have to import `injection_detection_server.postman_collection.json` into your _Postman_
+To test the API with URLs, you have to import `injection_detection_server.postman_collection.json` into your _Postman_
 
 ###### Server URL
 
