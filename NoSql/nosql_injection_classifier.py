@@ -6,7 +6,6 @@ class  NoSqlInjection():
 
         def __init__(self,feature_extractor):
             print(nosql_model_path)
-            self.loadModel(nosql_model_path)
             self.feature_extractor=feature_extractor
 
         def loadModel(self,nosql_model_path):
@@ -15,7 +14,7 @@ class  NoSqlInjection():
 
         def predict(self):
                 features_val= self.feature_extractor.result
-                adaboost=self.model_object
+                adaboost=self.loadModel(nosql_model_path)
                 result = adaboost.best_estimator_.predict([features_val])
                 #converting numpy array to list
                 result=result.tolist()
