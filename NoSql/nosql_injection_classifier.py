@@ -4,17 +4,19 @@ nosql_model_path='storage/Adaboost.joblib'
 
 class  NoSqlInjection():
 
-        def __init__(self):
+        def __init__(self,feature_extractor):
             print(nosql_model_path)
             self.loadModel(nosql_model_path)
-
+            self.feature_extractor=feature_extractor
 
         def loadModel(self,nosql_model_path):
-            self.model_object= load(nosql_model_path)
-           
-        
+            model_object= load(nosql_model_path)
+            return model_object
+
         def predict(self):
-                result= self.model_object.best_estimator_.predict([[1,1,0,1,0,0,0,0,0,	0]])
+                features_val= self.feature_extractor.result
+                adaboost=self.model_object
+                result = adaboost.best_estimator_.predict([features_val])
                 #converting numpy array to list
                 result=result.tolist()
                 # converting list to integer

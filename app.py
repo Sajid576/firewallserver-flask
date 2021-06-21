@@ -42,9 +42,9 @@ def detectSqlInjection():
 @app.route("/nosql_injection",methods=['POST'])
 def detectNoSqlInjection():
     try:
-          NoSqlFeatureExtractor(request.get_json() )
-          predictedClass=NoSqlInjection().predict()
-          print(predictedClass)
+          feature_extractor_obj= NoSqlFeatureExtractor(request.get_json()['query'] )
+          predictedClass=NoSqlInjection(feature_extractor_obj).predict()
+          print("Predicted class:  "+str(predictedClass))
         
           res={
               'message':"NoSQL injection prediction successfully performed",
@@ -55,9 +55,9 @@ def detectNoSqlInjection():
             }
           return res
     except Exception as e:
-        print("Oops!", e.message, "occurred.")
+        print("Oops!", e, "occurred.")
         res={
-              'message':e.message,
+              'message':e,
               'error':"Err",
               'body':{
                 'result':""
